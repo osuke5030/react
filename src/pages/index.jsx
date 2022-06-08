@@ -3,22 +3,21 @@ import Head from "next/head";
 import { Footer } from "../components/Footer/Footer";
 import classes from "../styles/Home.module.css";
 import { Header } from "../components/Header/Header";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 // 新たな変数を関数内で使う場合、変数がコンポーネント内で定義されていたら関数をコンポーネント外で定義するとエラーとなる
 // コンポーネント内で定義するとレンダリングされると関数も再生成される→解決策useCallBackを使う
 
 export default function Home() {
   const [count, setCount] = useState(1);
-  const handleClick = (e) => {
-    setCount((count) => count + 1);
-    setCount((count) => count + 1);
+  const handleClick = useCallback(() => {
+    if (count < 10) {
+      setCount((count) => count + 1);
+    }
     // setCount(function (count) {
     //   return count + 1;
     // });
-  };
-
-  console.log(count);
+  }, [count]);
 
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
