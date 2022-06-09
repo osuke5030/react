@@ -14,3 +14,9 @@
   align-items: center;
   flex-direction: column;
 }
+
+.list {
+  padding-left: 0;
+  width: 5%;
+  margin: auto;
+}
