@@ -3,18 +3,21 @@ import Head from "next/head";
 import { Footer } from "../components/Footer/Footer";
 import classes from "../styles/Home.module.css";
 import { Header } from "../components/Header/Header";
-import { useCounter } from "../hooks/useCounter";
-import { useInputArray } from "../hooks/useInputArray";
-import { useBgLightBlue } from "../hooks/useBgLightBlue";
 
 // 新たな変数を関数内で使う場合、変数がコンポーネント内で定義されていたら関数をコンポーネント外で定義するとエラーとなる
 // コンポーネント内で定義するとレンダリングされると関数も再生成される→解決策useCallBackを使う
 
-export default function Home() {
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
-  const { text, array, handleAdd, handleChange } = useInputArray();
-  useBgLightBlue();
-
+export default function Home(props) {
+  const {
+    count,
+    isShow,
+    handleClick,
+    handleDisplay,
+    text,
+    array,
+    handleAdd,
+    handleChange,
+  } = props;
   return (
     <div className={classes.container}>
       <Head>
@@ -35,7 +38,7 @@ export default function Home() {
       />
       <button onClick={handleAdd}>追加</button>
       <ul className={classes.list}>
-        {array.map((item) => {
+        {array?.map((item) => {
           return <li key={item}>{item}</li>;
         })}
       </ul>
