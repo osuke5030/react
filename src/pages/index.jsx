@@ -15,7 +15,7 @@ export default function Home() {
 
   const handleClick = useCallback(() => {
     if (count < 10) {
-      setCount((count) => count + 1);
+      setCount((prevCount) => prevCount + 1);
     }
     // setCount(function (count) {
     //   return count + 1;
@@ -23,7 +23,7 @@ export default function Home() {
   }, [count]);
 
   const handleChange = useCallback((e) => {
-    if (e.target.value.length >= 5) {
+    if (e.target.value.length > 5) {
       alert("5文字以内にしてください");
       return;
     }
@@ -31,7 +31,7 @@ export default function Home() {
   }, []);
 
   const handleDisplay = useCallback(() => {
-    setIsShow((isShow) => !isShow);
+    setIsShow((prevIsShow) => !prevIsShow);
   }, []);
 
   useEffect(() => {
