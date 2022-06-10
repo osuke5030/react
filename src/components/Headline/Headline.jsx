@@ -1,6 +1,6 @@
 import classes from "./Headline.module.css";
 
-export function Headline(props) {
+export const Headline = (props) => {
   return (
     <div>
       <h1 className={classes.title}>{props.page} page</h1>
@@ -8,4 +8,4 @@ export function Headline(props) {
       <p className={classes.description}>残りは{props.items.length}個です</p>
     </div>
   );
-}
+};

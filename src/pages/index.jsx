@@ -7,7 +7,7 @@ import { Header } from "../components/Header/Header";
 // 新たな変数を関数内で使う場合、変数がコンポーネント内で定義されていたら関数をコンポーネント外で定義するとエラーとなる
 // コンポーネント内で定義するとレンダリングされると関数も再生成される→解決策useCallBackを使う
 
-export default function Home(props) {
+const Home = (props) => {
   const {
     count,
     isShow,
@@ -46,4 +46,6 @@ export default function Home(props) {
       <Footer />
     </div>
   );
-}
+};
+
+export default Home;

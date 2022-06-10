@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { Header } from "../components/Header/Header";
 
-export default function About(props) {
+const About = (props) => {
   const {
     doubleCount,
     isShow,
@@ -43,4 +43,6 @@ export default function About(props) {
       <Footer />
     </div>
   );
-}
+};
+
+export default About;
