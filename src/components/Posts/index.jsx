@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 
-const Posts = (props) => {
+const Posts = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
