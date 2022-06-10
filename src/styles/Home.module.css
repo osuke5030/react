@@ -1,22 +1,7 @@
 .container {
-  padding: 0 2rem;
-  text-align: center;
-}
-
-.input {
-  display: block;
-  margin: 0 auto;
-}
-
-.button {
+  min-height: 100vh;
+  padding: 0 0.5rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-}
-
-.list {
-  padding-left: 0;
-  width: 5%;
-  margin: auto;
+  align-items: center;
 }
